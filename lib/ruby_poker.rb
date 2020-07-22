@@ -1,6 +1,7 @@
 require "ruby_poker/version"
+require "ruby_poker/card"
 
 module RubyPoker
-  class Error < StandardError; end
-  # Your code goes here...
+  NUMBERS = ([*2..13] + [1]).freeze
+  SUITS = %i[club diamond heart spade].freeze
 end
