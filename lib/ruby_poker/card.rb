@@ -12,11 +12,11 @@ module RubyPoker
     end
 
     def suit_level
-      RubyPoker::SUITS.index(@suit)
+      RubyPoker::SUITS.reverse.index(@suit)
     end
 
     def number_level
-      RubyPoker::NUMBERS.index(@number)
+      RubyPoker::NUMBERS.reverse.index(@number)
     end
 
   private

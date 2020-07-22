@@ -25,21 +25,21 @@ module RubyPoker
     sub_test_case "#<=>" do
       sub_test_case "compare number" do
         test "simple numbers" do
-          a = RubyPoker::Card.new(suit: :heart, number: 8)
-          b = RubyPoker::Card.new(suit: :heart, number: 2)
+          a = Card.new(suit: :heart, number: 8)
+          b = Card.new(suit: :heart, number: 2)
           assert(a > b)
         end
 
         test "compare ace" do
-          a = RubyPoker::Card.new(suit: :heart, number: 13)
-          b = RubyPoker::Card.new(suit: :heart, number: 1)
+          a = Card.new(suit: :heart, number: 13)
+          b = Card.new(suit: :heart, number: 1)
           assert(a < b)
         end
 
         test "max number" do
           cards = [*1..5]
             .shuffle
-            .map { |i| RubyPoker::Card.new(suit: :heart, number: i) }
+            .map { |i| Card.new(suit: :heart, number: i) }
 
           assert_equal(1, cards.max.number)
         end
@@ -47,20 +47,20 @@ module RubyPoker
 
       sub_test_case "compare suit(same number)" do
         test "spade and heart" do
-          a = RubyPoker::Card.new(suit: :spade, number: 1)
-          b = RubyPoker::Card.new(suit: :heart, number: 1)
+          a = Card.new(suit: :spade, number: 1)
+          b = Card.new(suit: :heart, number: 1)
           assert(a > b)
         end
 
         test "heart and club" do
-          a = RubyPoker::Card.new(suit: :club, number: 1)
-          b = RubyPoker::Card.new(suit: :heart, number: 1)
+          a = Card.new(suit: :club, number: 1)
+          b = Card.new(suit: :heart, number: 1)
           assert(a < b)
         end
 
         test "spade and diamond" do
-          a = RubyPoker::Card.new(suit: :spade, number: 1)
-          b = RubyPoker::Card.new(suit: :diamond, number: 1)
+          a = Card.new(suit: :spade, number: 1)
+          b = Card.new(suit: :diamond, number: 1)
           assert(a > b)
         end
       end
