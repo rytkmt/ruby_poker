@@ -19,8 +19,6 @@ module RubyPoker
       RubyPoker::NUMBERS.reverse.index(@number)
     end
 
-  private
-
     def <=>(other)
       number_comparision = number_level <=> other.number_level
       number_comparision.zero? ? suit_level <=> other.suit_level : number_comparision
