@@ -27,7 +27,7 @@ module RubyPoker
 
     def turn(player:)
       puts "\n#{player.name} のターンです"
-      player.show
+      p player
 
       puts "カードの交換ができます"
       indexes = input_change_indexes
@@ -36,7 +36,7 @@ module RubyPoker
       new_cards = @deck.draw(count: indexes.size)
       trushed = player.change(indexes: indexes, new_cards: new_cards)
       @deck.trush(cards: trushed)
-      player.show
+      p player
     end
 
     def input_player_count
@@ -59,7 +59,7 @@ module RubyPoker
       puts "----- 結果 -----"
       @players.each do |player|
         puts "#{player.name} の手札"
-        player.show
+        p player
         puts ""
       end
 
