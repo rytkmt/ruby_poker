@@ -21,6 +21,7 @@ GEM
     pry-byebug (3.9.0)
       byebug (~> 11.0)
       pry (~> 0.13.0)
+    rainbow (3.0.0)
     rake (13.0.1)
     rr (1.2.1)
     test-unit (3.3.6)
@@ -39,6 +40,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   pry-byebug
+  rainbow
   rake
   test-unit
   test-unit-rr

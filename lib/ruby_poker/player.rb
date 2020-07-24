@@ -1,9 +1,10 @@
 module RubyPoker
   class Player
     include Comparable
-    delegate :<=>, to: :@hand
+    attr_reader :name, :hand
 
-    def initialize(cards:)
+    def initialize(name:, cards:)
+      @name = name
       @cards = cards
       @hand = Hand.new(cards: cards)
     end
@@ -16,6 +17,22 @@ module RubyPoker
       @cards += new_cards
       @hand = Hand.new(cards: @cards)
       trushed
+    end
+
+    def <=>(other)
+      @hand <=> other.hand
+    end
+
+    def inspect
+      cards_str = @cards.map.with_index(1) do |card, i|
+        "#{i}. #{card.inspect}"
+      end.join("   ")
+
+      cards_str + "\n" + @hand.inspect + "\n"
+    end
+
+    def show
+      p self
     end
   end
 end
