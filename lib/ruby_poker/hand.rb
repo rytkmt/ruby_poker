@@ -20,6 +20,23 @@ module RubyPoker
       hand_comparison.zero? ? @comparison_card <=> other.comparison_card : hand_comparison
     end
 
+    def inspect
+      hand_type_name =
+        case @hand_type
+        when :royal_straight_flush; "ロイヤルストレートフラッシュ"
+        when :straight_flush; "ストレートフラッシュ"
+        when :four_of_a_kind; "フォーカード"
+        when :full_house; "フルハウス"
+        when :flush; "フラッシュ"
+        when :straight; "ストレート"
+        when :three_of_a_kind; "スリーカード"
+        when :two_pair; "ツーペア"
+        when :one_pair; "ワンペア"
+        when :high_card; "🐷"
+        end
+
+      "役: #{hand_type_name}"
+    end
   private
 
     def judge(cards:)

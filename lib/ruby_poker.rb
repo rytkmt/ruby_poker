@@ -1,5 +1,6 @@
 require "ruby_poker/version"
 require "active_support/all"
+require "rainbow"
 Dir[__dir__ + "/ruby_poker/*.rb"].each { |p| require p }
 
 module RubyPoker
@@ -17,4 +18,8 @@ module RubyPoker
     one_pair
     high_card
   ].freeze
+
+  def self.play
+    RubyPoker::Game.play
+  end
 end
