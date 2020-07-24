@@ -1,7 +1,6 @@
 require "ruby_poker/version"
 require "active_support/all"
-require "ruby_poker/card"
-require "ruby_poker/hand"
+Dir[__dir__ + "/ruby_poker/*.rb"].each { |p| require p }
 
 module RubyPoker
   NUMBERS = ([1] + [*2..13].reverse).freeze
