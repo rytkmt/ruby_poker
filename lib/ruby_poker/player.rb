@@ -30,9 +30,5 @@ module RubyPoker
 
       cards_str + "\n" + @hand.inspect + "\n"
     end
-
-    def show
-      p self
-    end
   end
 end
